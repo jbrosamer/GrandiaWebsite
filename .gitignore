@@ -1,0 +1,6 @@
+.DS_Store
+.claude/
+GoDaddyTemplate.html
+GoDaddyTemplate_files/
+generate_variants.py
+variants.py
