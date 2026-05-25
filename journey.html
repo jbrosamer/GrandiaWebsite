@@ -32,7 +32,7 @@
       align-items: center;
     }
     .hero-overlay {
-      background: linear-gradient(to right, rgba(24,40,28,0.88) 0%, rgba(24,40,28,0.55) 55%, rgba(24,40,28,0.1) 100%);
+      background: linear-gradient(to right, rgba(28,46,48,0.88) 0%, rgba(28,46,48,0.55) 55%, rgba(28,46,48,0.1) 100%);
     }
     .hero h1 {
       font-size: clamp(2.75rem, 6.5vw, 5rem);
@@ -42,7 +42,8 @@
     .hero h1 em {
       font-style: italic;
       font-weight: 300;
-      color: var(--gold-light);
+      color: var(--white);
+      opacity: 0.85;
       display: block;
     }
     .hero-sub { font-size: 1.125rem; max-width: 480px; margin-bottom: 2.25rem; }
@@ -110,11 +111,11 @@
     .hiw-number {
       font-family: var(--font-display);
       font-size: 3.5rem;
-      font-weight: 300;
-      color: var(--gold-light);
+      font-weight: 400;
+      color: var(--green-deep);
       line-height: 1;
       margin-bottom: 0.75rem;
-      opacity: 0.7;
+      opacity: 0.9;
     }
     .hiw-step h3 {
       font-family: var(--font-display);
@@ -132,7 +133,7 @@
     /* ─── Responsive ─────────────────────────────────────────── */
     @media (max-width: 768px) {
       .hero { min-height: 540px; align-items: flex-end; }
-      .hero-overlay { background: linear-gradient(to top, rgba(24,40,28,0.92) 0%, rgba(24,40,28,0.55) 50%, rgba(24,40,28,0.2) 100%); }
+      .hero-overlay { background: linear-gradient(to top, rgba(28,46,48,0.92) 0%, rgba(28,46,48,0.55) 50%, rgba(28,46,48,0.2) 100%); }
       .hero-content { padding: 3rem 2rem; }
       .syndicate-split { grid-template-columns: 1fr; min-height: auto; }
       .syndicate-split-img { order: -1; min-height: 300px; }

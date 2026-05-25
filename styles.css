@@ -1,17 +1,21 @@
 /* ─── Design Tokens ─────────────────────────────────────── */
+/* Teal & Grey palette — primary teal #2F6F73 grounds the brand;
+   softer teal #4F8A8C carries hover/links; cool greys provide
+   structure and a pewter accent replaces the warm gold. */
 :root {
-  --green-deep:   #243B2E;
-  --green-mid:    #3A5A43;
-  --green-light:  #5A8068;
-  --gold:         #C4A45A;
-  --gold-light:   #DFC48A;
-  --cream:        #F5F0E8;
-  --cream-dark:   #EAE3D5;
+  --green-deep:   #2F6F73;
+  --green-mid:    #4F8A8C;
+  --green-light:  #7AA8AB;
+  --gold:         #B8C0C7;       /* light pewter — accents on dark teal backgrounds */
+  --gold-light:   #D8DDE2;
+  --accent-ink:   #5A6571;       /* dark slate — accents on white/cream backgrounds */
+  --cream:        #F1F3F5;
+  --cream-dark:   #E5E7EB;
   --white:        #FFFFFF;
-  --charcoal:     #1E1E1E;
-  --text-mid:     #3D3D3D;
-  --text-muted:   #6B6B6B;
-  --border:       rgba(36,59,46,0.15);
+  --charcoal:     #2B2D2F;
+  --text-mid:     #4A5560;
+  --text-muted:   #6B7280;
+  --border:       rgba(47,111,115,0.15);
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'Jost', system-ui, sans-serif;
@@ -20,8 +24,8 @@
   --radius-md:  8px;
   --radius-lg:  16px;
 
-  --shadow-card: 0 2px 12px rgba(36,59,46,0.08);
-  --shadow-lift: 0 8px 32px rgba(36,59,46,0.14);
+  --shadow-card: 0 2px 12px rgba(47,111,115,0.08);
+  --shadow-lift: 0 8px 32px rgba(47,111,115,0.14);
 }
 
 /* ─── Reset ─────────────────────────────────────────────── */
@@ -60,9 +64,12 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--accent-ink);
   margin-bottom: 0.75rem;
 }
+.hero .section-label,
+.horses .section-label,
+footer .section-label { color: var(--gold); }
 .btn {
   display: inline-flex;
   align-items: center;
@@ -87,7 +94,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   background: var(--green-mid);
   border-color: var(--green-mid);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(36,59,46,0.25);
+  box-shadow: 0 6px 20px rgba(47,111,115,0.25);
 }
 .btn-outline {
   background: transparent;
@@ -110,22 +117,24 @@ ul { list-style: none; margin: 0; padding: 0; }
   transform: translateY(-2px);
 }
 .btn-gold {
-  background: var(--gold);
+  background: var(--white);
   color: var(--green-deep);
-  border-color: var(--gold);
+  border-color: var(--white);
 }
 .btn-gold:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
+  background: var(--cream-dark);
+  border-color: var(--cream-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(196,164,90,0.35);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 .divider {
   width: 48px;
   height: 2px;
-  background: var(--gold);
+  background: var(--accent-ink);
   margin: 1.25rem 0;
 }
+.hero .divider,
+.horses .divider { background: var(--gold); }
 .divider-center {
   margin: 1.25rem auto;
 }
@@ -174,12 +183,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 .nav-links .nav-cta {
   margin-left: 0.5rem;
   padding: 0.5rem 1.25rem;
-  background: var(--gold);
+  background: var(--white);
   color: var(--green-deep);
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
 }
-.nav-links .nav-cta:hover { background: var(--gold-light); }
+.nav-links .nav-cta:hover { background: var(--cream-dark); }
 .hamburger {
   display: none;
   flex-direction: column;
@@ -238,9 +247,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(24,40,28,0.92) 0%,
-    rgba(24,40,28,0.55) 45%,
-    rgba(24,40,28,0.2) 100%
+    rgba(28,46,48,0.92) 0%,
+    rgba(28,46,48,0.55) 45%,
+    rgba(28,46,48,0.2) 100%
   );
 }
 .hero-content {
@@ -280,7 +289,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* ─── Footer ─────────────────────────────────────────────── */
 footer {
-  background: #111F17;
+  background: #1E2A2C;
   padding: 3rem 2rem 2rem;
   color: rgba(255,255,255,0.6);
 }
@@ -330,7 +339,7 @@ footer .container {
 .footer-social-link:hover {
   border-color: var(--gold);
   color: var(--gold);
-  background: rgba(196,164,90,0.08);
+  background: rgba(184,192,199,0.12);
 }
 .footer-copy {
   font-size: 0.8125rem;
@@ -351,8 +360,10 @@ footer .container {
 }
 
 /* ─── Responsive ─────────────────────────────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
+}
+@media (max-width: 768px) {
   .hero { min-height: 520px; }
 }
