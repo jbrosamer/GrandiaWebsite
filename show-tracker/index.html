@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show Tracker</title>
+  <meta name="description" content="Track ride times and results for your riders from Horse Show Office.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="theme-color" content="#2F6F73">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Show Tracker</h1>
+    <p>Pull ride times &amp; results for your riders from Horse Show Office</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Riders -->
+    <section class="card" aria-labelledby="riders-heading">
+      <h2 id="riders-heading">My Riders</h2>
+      <p class="hint">These names are remembered on this device and used to filter every show you look up.</p>
+      <form id="rider-form" class="inline-form">
+        <input type="text" id="rider-input" placeholder="Add a rider's name" autocomplete="off">
+        <button type="submit">Add</button>
+      </form>
+      <ul id="rider-list" class="chip-list"></ul>
+    </section>
+
+    <!-- New lookup -->
+    <section class="card" aria-labelledby="lookup-heading">
+      <h2 id="lookup-heading">Look Up a Show</h2>
+      <div class="form-grid">
+        <label>
+          Date
+          <input type="date" id="show-date">
+        </label>
+        <label>
+          State
+          <select id="show-state"></select>
+        </label>
+        <label class="full-width">
+          Show name <span class="optional">(optional)</span>
+          <input type="text" id="show-name" placeholder="e.g. Spring Classic">
+        </label>
+      </div>
+
+      <a id="hso-link" class="external-link" href="https://www.horseshowoffice.com/" target="_blank" rel="noopener noreferrer">
+        Open Horse Show Office &rarr;
+      </a>
+      <p class="hint">
+        On Horse Show Office, find the show for the date and state above, then open its schedule or
+        results table. Select the table (or the whole page), copy it, and paste it below.
+      </p>
+
+      <div id="paste-zone" class="paste-zone" contenteditable="true" data-placeholder="Paste the schedule or results table here&hellip;"></div>
+
+      <div class="action-row">
+        <button id="find-riders-btn" type="button">Find My Riders</button>
+        <button id="clear-paste-btn" type="button" class="secondary">Clear Pasted Data</button>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="card" id="results-section" hidden aria-labelledby="results-heading">
+      <h2 id="results-heading">Results for <span id="results-context"></span></h2>
+      <div id="results-output"></div>
+      <div class="action-row">
+        <button id="save-entry-btn" type="button">Save to History</button>
+      </div>
+    </section>
+
+    <!-- History -->
+    <section class="card" aria-labelledby="history-heading">
+      <h2 id="history-heading">Saved Show Days</h2>
+      <p class="hint" id="history-empty-hint">Nothing saved yet. Results you save will appear here for quick reference.</p>
+      <ul id="history-list" class="history-list"></ul>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Show Tracker &mdash; data stays on this device.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

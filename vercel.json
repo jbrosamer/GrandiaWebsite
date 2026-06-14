@@ -3,6 +3,7 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/facility", "destination": "/facility.html" },
-    { "source": "/journey", "destination": "/journey.html" }
+    { "source": "/journey", "destination": "/journey.html" },
+    { "source": "/show-tracker", "destination": "/show-tracker/index.html" }
   ]
 }
