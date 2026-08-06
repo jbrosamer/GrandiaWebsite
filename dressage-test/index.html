@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Second Level Test 1 — Movement by Movement</title>
+<meta name="description" content="USEF Second Level Test 1 (2023), illustrated movement by movement on the dressage court.">
+<meta name="theme-color" content="#2F6F73">
+<link rel="manifest" href="/dressage-test/manifest.json">
+<link rel="icon" href="/dressage-test/icon-192.png">
+<link rel="apple-touch-icon" href="/dressage-test/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SL Test 1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="/dressage-test/app.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-title">
+    <strong>Second Level&nbsp;·&nbsp;Test 1</strong>
+    <span>USEF 2023</span>
+  </div>
+  <button id="btn-list" class="icon-btn" aria-label="All movements" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+  </button>
+</header>
+
+<main id="stage">
+  <div class="court-wrap">
+    <svg id="court" viewBox="0 0 31 71" role="img" aria-labelledby="court-title"></svg>
+  </div>
+
+  <section class="card" id="card" aria-live="polite">
+    <div class="card-head">
+      <span class="mv-num" id="mv-num">1</span>
+      <span class="coef" id="mv-coef" hidden>coefficient 2</span>
+      <span class="gaits" id="mv-gaits"></span>
+    </div>
+    <dl class="rows" id="mv-rows"></dl>
+    <p class="note" id="mv-note" hidden></p>
+  </section>
+</main>
+
+<nav class="controls">
+  <button id="btn-prev" class="nav-btn" aria-label="Previous movement">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>
+  </button>
+  <button id="btn-count" class="counter" aria-label="Jump to movement">
+    <span id="count-text">1 / 21</span>
+    <span class="progress"><span id="progress-fill"></span></span>
+  </button>
+  <button id="btn-next" class="nav-btn" aria-label="Next movement">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+  </button>
+</nav>
+
+<div class="sheet-scrim" id="scrim" hidden></div>
+<aside class="sheet" id="sheet" role="dialog" aria-label="All movements" aria-modal="true" hidden>
+  <div class="sheet-head">
+    <h2>All movements</h2>
+    <button id="btn-close" class="icon-btn" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <ol class="sheet-list" id="sheet-list"></ol>
+  <p class="sheet-foot">
+    Colour shows the gait · thicker line = medium · dashed = free walk ·
+    line just inside the track = shoulder&#8209;in · red square = halt.
+  </p>
+</aside>
+
+<script src="/dressage-test/app.js"></script>
+</body>
+</html>

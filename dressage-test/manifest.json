@@ -1,0 +1,16 @@
+{
+  "name": "Second Level Test 1 — Dressage",
+  "short_name": "SL Test 1",
+  "description": "USEF Second Level Test 1 (2023), illustrated movement by movement on the dressage court.",
+  "start_url": "/dressage-test",
+  "scope": "/dressage-test",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F1F3F5",
+  "theme_color": "#2F6F73",
+  "icons": [
+    { "src": "/dressage-test/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/dressage-test/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/dressage-test/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
