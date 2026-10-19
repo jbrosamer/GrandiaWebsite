@@ -296,6 +296,31 @@
       margin-bottom: 1.5rem;
     }
     .horse-card-body a.btn { font-size: 0.75rem; }
+    .horse-card-body .horse-pedigree {
+      font-style: italic;
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+    .horse-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.375rem;
+      padding: 0.375rem 0.375rem 0;
+      background: var(--white);
+    }
+    .horse-thumb {
+      padding: 0;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      background: none;
+      opacity: 0.7;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+    }
+    .horse-thumb img { display: block; width: 100%; height: 64px; object-fit: cover; }
+    .horse-thumb:hover, .horse-thumb:focus-visible { opacity: 1; }
+    .horse-thumb.active { opacity: 1; border-color: var(--green-mid); }
 
     /* ─── Testimonials ───────────────────────────────────────── */
     .testimonials {
@@ -331,6 +356,22 @@
       pointer-events: auto;
     }
     .testi-slide-img { overflow: hidden; }
+    .testi-img-pending { position: relative; }
+    .testi-img-note {
+      position: absolute;
+      left: 50%;
+      bottom: 1.5rem;
+      transform: translateX(-50%);
+      padding: 0.5rem 1.125rem;
+      background: rgba(15,40,42,0.78);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
     .testi-slide-img img {
       width: 100%;
       height: 100%;
@@ -494,7 +535,7 @@
       .facility-cta-right { justify-content: center; }
       .horses-grid { grid-template-columns: 1fr; }
       .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-      .testi-slides { height: 600px; }
+      .testi-slides { height: 780px; }
       .testi-slide { grid-template-columns: 1fr; grid-template-rows: 260px 1fr; }
       .testi-slide-text { padding: 2rem 1.75rem; }
     }
@@ -627,6 +668,29 @@
         <div class="horse-img-wrap">
           <img
             class="horse-card-img"
+            src="images/nikko_trot_1.jpg"
+            alt="Nikko RF — 2026 bay Oldenburg colt trotting beside his dam"
+          />
+        </div>
+        <div class="horse-thumbs" role="group" aria-label="More photos of Nikko">
+          <button class="horse-thumb active" aria-label="Nikko photo 1"><img src="images/nikko_trot_1.jpg" alt="" loading="lazy" /></button>
+          <button class="horse-thumb" aria-label="Nikko photo 2"><img src="images/nikko_trot_4.jpg" alt="" loading="lazy" /></button>
+          <button class="horse-thumb" aria-label="Nikko photo 3"><img src="images/nikko_trot_2.jpg" alt="" loading="lazy" /></button>
+          <button class="horse-thumb" aria-label="Nikko photo 4"><img src="images/nikko_standing.jpg" alt="" loading="lazy" /></button>
+        </div>
+        <div class="horse-card-body">
+          <p class="horse-meta">2026 Oldenburg · Bay Colt</p>
+          <h3>Nikko RF</h3>
+          <p class="horse-pedigree">Nechristo (Negro / Christ) × EM Sunrise TN (Sagnol / Amiro)</p>
+          <p>A striking colt with movement and personality to match. Friendly, confident, and easy to work with. Sire Nechristo passes on solid frames, good necks, and superior work ethic and rideability, and dam Sunrise TN is a proven producer of quality foals now succeeding under saddle.</p>
+          <a href="#contact" class="btn btn-primary" style="margin-top:1.25rem;">Inquire About Nikko</a>
+        </div>
+      </div>
+
+      <div class="horse-card" data-reveal>
+        <div class="horse-img-wrap">
+          <img
+            class="horse-card-img"
             src="images/oso_trot.JPG"
             alt="Virtuoso — 10-year-old bay mare"
           />
@@ -673,66 +737,27 @@
 
       <div class="testi-slide active">
         <div class="testi-slide-img">
-
-          <img src="images/mule_awesome.jpg" alt="TODO convert Ashley_awards.HEIC to JPEG" /> 
+          <img src="images/ashley_awards.jpg" alt="Ashley in show attire on her dark bay horse wearing a championship ribbon" style="object-position: center 30%;" />
         </div>
         <div class="testi-slide-text">
-          <p class="testi-quote">The training approach at Grandia completely changed how my horse and I communicate. We went from stuck at Training Level to successfully showing First Level within a year. The attention to detail in each session is unlike anything I'd experienced before.</p>
+          <p class="testi-quote">I live 90 minutes from the barn and have a demanding job, and my horse is the last of our family's breeding program. Off Broadway's care and attention to detail mean I know he's getting everything he needs. Nicki's guidance has taken us to bronze and silver medals, regional reserve championships at PSG and I-1, and our first CDI. Whatever your goals, she can help get you there.</p>
           <div class="testi-attribution">
-            <span class="testi-name">Jessica T.</span>
-            <span class="testi-detail">Adult Amateur · Training → First Level</span>
+            <span class="testi-name">Ashley</span>
+            <span class="testi-detail">Training &amp; Boarding Client</span>
           </div>
         </div>
       </div>
 
       <div class="testi-slide">
-        <div class="testi-slide-img">
-          <img src="images/mule_awesome.jpg" alt="Dressage horse performing extended trot in moody Pacific Northwest light" />
+        <div class="testi-slide-img testi-img-pending">
+          <img src="images/very_good_dogs.JPG" alt="The barn dogs at Off Broadway Farm" />
+          <span class="testi-img-note">Picture coming soon</span>
         </div>
         <div class="testi-slide-text">
-          <p class="testi-quote">MOUNTED ARCHERY</p>
+          <p class="testi-quote">Nicki has been my trainer for over 14 years. Rather than impose a formulaic approach, her goal has always been to make my horse and me compatible and my riding enjoyable. She lives on site and takes responsibility for every aspect of care, from meeting with vets to noticing unusual behavior. Without Nicki, I would not be a happy and satisfied horse owner.</p>
           <div class="testi-attribution">
-            <span class="testi-name">Michael E.</span>
-            <span class="testi-detail">Haul-in Coaching Client · Snohomish County</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-slide">
-        <div class="testi-slide-img">
-          <img src="images/susan_approved.JPG" alt="Dressage competitor at bright outdoor show arena" />
-        </div>
-        <div class="testi-slide-text">
-          <p class="testi-quote">Purchasing my horse through Grandia Dressage was a seamless experience. The honest assessment of each horse's strengths and suitability for my goals gave me total confidence in my decision. My mare has exceeded every expectation.</p>
-          <div class="testi-attribution">
-            <span class="testi-name">Sarah M.</span>
-            <span class="testi-detail">Sales Client · Second Level Competitor</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-slide">
-        <div class="testi-slide-img">
-          <img src="images/kylo_mila.JPG" alt="Rider on dark horse performing dressage at outdoor arena" />
-        </div>
-        <div class="testi-slide-text">
-          <p class="testi-quote">As a parent of a student in Grandia's program, I have seen remarkable growth in both my child and the horses. The commitment to quality training and education is evident in every lesson.</p>
-          <div class="testi-attribution">
-            <span class="testi-name">Karen K.</span>
-            <span class="testi-detail">Parent of Youth Student</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testi-slide">
-        <div class="testi-slide-img">
-          <img src="images/barb_great.JPG" alt="Grey dressage horse with purple saddle pad competing outdoors" />
-        </div>
-        <div class="testi-slide-text">
-          <p class="testi-quote">I cannot express how valuable the coaching opportunities at Grandia Dressage have been. The support and expertise I received provided me with the confidence to pursue my goals in equine sports.</p>
-          <div class="testi-attribution">
-            <span class="testi-name">Liam B.</span>
-            <span class="testi-detail">Coaching Client</span>
+            <span class="testi-name">Lori</span>
+            <span class="testi-detail">Client for 14+ Years</span>
           </div>
         </div>
       </div>
@@ -744,9 +769,6 @@
       <div class="testi-dots">
         <button class="testi-dot active" aria-label="Testimonial 1"></button>
         <button class="testi-dot" aria-label="Testimonial 2"></button>
-        <button class="testi-dot" aria-label="Testimonial 3"></button>
-        <button class="testi-dot" aria-label="Testimonial 4"></button>
-        <button class="testi-dot" aria-label="Testimonial 5"></button>
       </div>
       <button class="testi-arrow testi-next" aria-label="Next testimonial">&#8594;</button>
     </div>
@@ -891,6 +913,16 @@
 
     startTimer();
   })();
+
+  // Horse card photo thumbnails
+  document.querySelectorAll('.horse-card').forEach(card => {
+    const main = card.querySelector('.horse-card-img');
+    const thumbs = card.querySelectorAll('.horse-thumb');
+    thumbs.forEach(btn => btn.addEventListener('click', () => {
+      main.src = btn.querySelector('img').src;
+      thumbs.forEach(t => t.classList.toggle('active', t === btn));
+    }));
+  });
 </script>
 
 </body>
